@@ -117,6 +117,10 @@ a:hover {
 
 @media (max-width: 1205px) {
 
+	.slogan {
+		font-size: 45px !important;
+	}
+
 	#seekly {
 		font-size: 100px !important;
 		-webkit-text-stroke: 5px rgb(252, 252, 252) !important;
