@@ -29,7 +29,7 @@ h2 {
     width: 100%;
 }
 
-.main_title {
+.slogan {
 	text-align: left;
 	font-size: 55px;
 	font-family: "Montserrat", serif;
@@ -37,10 +37,20 @@ h2 {
 	font-weight: 800;
 }
 
+.slogan::after {
+    content: "|";
+    display: inline-block;
+    animation: blink 0.7s infinite;
+}
+
+.slogan.done::after {
+    content: "";
+}
+
 #seekly {
 	font-size: 150px;
 	font-family: "Cherry Bomb One", serif;
-	-webkit-text-stroke: 1px rgb(252, 252, 252);
+	-webkit-text-stroke: 3px rgb(252, 252, 252);
 	color: transparent;
 }
 
@@ -109,6 +119,7 @@ a:hover {
 
 	#seekly {
 		font-size: 100px !important;
+		-webkit-text-stroke: 5px rgb(252, 252, 252) !important;
 	}
 
 	.tm-image {
@@ -145,4 +156,8 @@ a:hover {
         opacity: 1;
         transform: translateY(0);
       }
-  }
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
