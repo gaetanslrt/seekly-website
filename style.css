@@ -93,6 +93,11 @@ h2 {
 	width: 50%;
 	color: white;
 	font-size: 20px;
+	transition: filter 0.3s ease;
+  }
+
+  .timeline-item:hover {
+	filter: brightness(1.4);
   }
   
   .timeline-item::before {
@@ -128,7 +133,7 @@ h2 {
   .timeline-date {
 	font-weight: bold;
 	font-size: 18px;
-	color: gray;
+	color: rgb(77, 77, 77);
   }
   
   .timeline-content {
