@@ -97,7 +97,7 @@ h2 {
   }
 
   .timeline-item:hover {
-	filter: brightness(1.6);
+	filter: brightness(1.5);
   }
   
   .timeline-item::before {
