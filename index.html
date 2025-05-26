@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,14 +31,22 @@
 
 	<button class="button"><a id="dwn" href="./software/Seekly.zip">Télécharger Seekly</a></button>
 
-	<br><br>
+	<br><br><br><br>
+
+	<center>
+		<p id="download-count">10+ téléchargements</p>
+	</center>
 
 	</div>
+
+	<br><br>
 
 	<center>
 		<img id="clouds" src="./images/clouds.png">
 	</center>
 	<br>
+
+	
 
 	<div class="to_padd">
 	<h2>L'outil CLI</h2>
@@ -266,7 +275,40 @@ sécurisée et sa communauté active, ce qui garantit la pérennité de notre pr
 		<a href="https://stackoverflow.com/">Stackoverflow - Site officiel</a>
 		<br>
 		<a href="https://www.w3schools.com/html/">HTML Tutorial - Web3 Schools</a>
+
+		<br><br>
+		<!-- Comment Section -->
+        <div class="comment-section">
+            <h3>Commentaires</h3>
+            <form id="comment-form">
+                <label for="comment-name">Nom :</label><br>
+                <input type="text" id="comment-name" name="comment-name" required><br>
+                <label for="comment-message">Commentaire :</label><br>
+                <textarea id="comment-message" name="comment-message" rows="4" required></textarea><br>
+                <button type="submit" class="button">Publier</button>
+            </form>
+            <div id="comments-list">
+                <!-- Comments will be appended here -->
+            </div>
+        </div>
+		
 		<br><br><br><p id="auteur">Outta Control Rebel - 22 février 2025</p>
 	</div>
+
+	<script>
+        // JavaScript for handling comment form submission
+        document.getElementById('comment-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('comment-name').value.trim();
+            const message = document.getElementById('comment-message').value.trim();
+            if (name && message) {
+                const commentDiv = document.createElement('div');
+                commentDiv.className = 'comment';
+                commentDiv.innerHTML = `<p><strong>${name}</strong> - ${new Date().toLocaleDateString('fr-FR')} ${new Date().toLocaleTimeString('fr-FR')}</p><p>${message}</p>`;
+                document.getElementById('comments-list').appendChild(commentDiv);
+                document.getElementById('comment-form').reset();
+            }
+        });
+    </script>
 </body>
 </html>
